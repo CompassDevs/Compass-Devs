@@ -135,3 +135,33 @@ NOTE ABOUT CROPPING
 If the correct picture is present but is cropped, the image itself may not
 need replacing. The relevant CSS uses object-fit. "contain" shows the whole
 image; "cover" fills the box and can crop the edges.
+
+LEGAL PAGE REFERENCES
+---------------------
+legal/privacy.html
+legal/terms.html
+legal/rombicapo/privacy.html
+legal/rombicapo/terms.html
+legal/cute-birds/privacy.html
+legal/cute-birds/terms.html
+legal/omnitides/privacy.html
+legal/omnitides/terms.html
+legal/omnitides-pro/privacy.html
+legal/omnitides-pro/terms.html
+legal/tidelive-world/privacy.html
+legal/tidelive-world/terms.html
+legal/chatzap/privacy.html
+legal/chatzap/terms.html
+
+
+Tile Squared:
+  legal/tile-squared/privacy.html
+  legal/tile-squared/terms.html
+
+Road Roller:
+  legal/road-roller/privacy.html
+  legal/road-roller/terms.html
+
+Jumpzy:
+  legal/jumpzy/privacy.html
+  legal/jumpzy/terms.html
