@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><title>Compass Devs</title><!-- Compass Devs hosting deployment V1, based on website V14 --><style>
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><title>Compass Devs — V13</title><!-- Release V11 --><style>
 :root{--navy:#071c3d;--blue:#168cf3;--cyan:#12c6dc;--text:#15253c;--muted:#65758b;--line:#e5ebf2}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Arial,sans-serif;color:var(--text);background:#fff}a{text-decoration:none;color:inherit}
 nav{height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(18px,6vw,86px);border-bottom:1px solid var(--line);background:#fff;position:sticky;top:0;z-index:30}
@@ -110,14 +110,54 @@ footer{background:#06172f;color:#b9c8d9;padding:40px 28px;text-align:center}
 .hero{height:clamp(390px,52vw,640px);background:#071a36;overflow:hidden}
 .hero>img{width:100%;height:100%;max-height:none;object-fit:cover;object-position:center center}
 @media(max-width:580px){.brand img{width:42px;height:42px}.hero{height:390px}.hero>img{height:100%;object-position:center center}}
-</style></head><body data-version="14">
-<nav><a class="brand home-link" href="#home"><img alt="Compass Devs" src="assets/images/embedded-01.png"/><span>Compass <span>Devs</span></span></a><div class="navlinks"><a href="#home">Home</a><a href="#portfolio">Games &amp; Apps</a><a href="#about">About</a><a href="#support">Support</a></div></nav>
+</style>
+<style id="clean-master-fixes">
+.brand img{
+  width:48px!important;height:48px!important;object-fit:cover!important;
+  border-radius:13px!important;background:#050b13!important;
+}
+.approved-hero{
+  position:relative!important;
+  height:auto!important;
+  min-height:0!important;
+  overflow:hidden!important;
+  background:#071a36!important;
+}
+.approved-hero picture,.approved-hero picture img{
+  display:block!important;width:100%!important;height:auto!important;max-height:none!important;
+}
+.approved-hero::before,.approved-hero::after{display:none!important}
+.hero-hotspot{position:absolute;z-index:5;display:block}
+.hero-hotspot-apps{left:5.4%;top:69.4%;width:19.8%;height:11.5%}
+.hero-hotspot-about{left:26.5%;top:69.4%;width:18.3%;height:11.5%}
+@media(max-width:760px){
+  .brand img{width:42px!important;height:42px!important;border-radius:12px!important}
+  .approved-hero picture img{width:100%!important;height:auto!important;object-fit:contain!important}
+  .hero-hotspot-apps{left:5.0%;top:56.8%;width:58%;height:10.2%}
+  .hero-hotspot-about{left:5.0%;top:69.0%;width:54%;height:10.2%}
+}
+</style>
+
+<link rel="icon" type="image/png" href="assets/images/compass_icon.png">
+<link rel="apple-touch-icon" href="assets/images/compass_icon.png">
+
+<style id="github-ready-image-safety">
+img{max-width:100%;height:auto}
+.product-card img,.product-hero img{object-fit:contain}
+.gallery img,.screenshot-grid img{object-fit:contain}
+</style>
+
+</head><body data-version="14">
+<nav><a class="brand home-link" href="#home"><img alt="Compass Devs" src="assets/images/compass_icon.png"/><span>Compass <span>Devs</span></span></a><div class="navlinks"><a href="#home">Home</a><a href="#portfolio">Games &amp; Apps</a><a href="#about">About</a><a href="#support">Support</a></div></nav>
 <main class="main" id="main">
-<section class="hero" id="home"><img alt="Compass Devs — Games &amp; Apps for a Brighter Everyday" src="assets/images/embedded-02.jpg"/>
-<div aria-label="Homepage actions" class="hero-actions">
-<a class="hero-btn primary" href="#portfolio">Explore Games &amp; Apps</a>
-<a class="hero-btn secondary" href="#about">About Compass Devs</a>
-</div></section>
+<section class="hero approved-hero" id="home" aria-label="Compass Devs — Games & Apps for a Brighter Everyday">
+<picture>
+  <source media="(max-width:760px)" srcset="assets/images/hero_mobile.jpg">
+  <img src="assets/images/hero_desktop.jpg" alt="Compass Devs — Games & Apps for a Brighter Everyday">
+</picture>
+<a class="hero-hotspot hero-hotspot-apps" href="#portfolio" aria-label="Explore Games and Apps"></a>
+<a class="hero-hotspot hero-hotspot-about" href="#about" aria-label="About Compass Devs"></a>
+</section>
 <section class="section" id="portfolio"><div class="eyebrow">Explore • Play • Discover</div><h2>Our Games &amp; Apps</h2><p class="lead">Released products, current rebuilds and selected prototypes from the Compass Devs journey. Each project now uses its real artwork wherever original assets are available.</p><div class="grid"><article class="product-card purple" data-product="tilesquared" tabindex="0">
 <div class="card-visual"><div class="icon-wrap"><div class="fallback">T²</div></div></div>
 <div class="card-copy"><small>Puzzle • New identity</small><h3>Tile Squared</h3><p>The next evolution of the 2048-inspired project previously released as Mergeify.</p><b>Explore project →</b></div>
@@ -125,30 +165,30 @@ footer{background:#06172f;color:#b9c8d9;padding:40px 28px;text-align:center}
 <div class="card-visual"><div class="icon-wrap"><div class="fallback">R3</div></div></div>
 <div class="card-copy"><small>Puzzle • Major update</small><h3>Rombicapo 3.0</h3><p>The game that started the Compass Devs journey, rebuilt with a modern visual direction and new features.</p><b>Explore project →</b></div>
 </article><article class="product-card sky" data-product="cutebirds" tabindex="0">
-<div class="card-visual"><div class="icon-wrap"><img alt="Cute Birds icon" src="assets/images/embedded-03.png"/></div></div>
+<div class="card-visual"><div class="icon-wrap"><img alt="Cute Birds icon" src="assets/images/cute-birds-icon.png"/></div></div>
 <div class="card-copy"><small>Match 3 • Released</small><h3>Cute Birds</h3><p>A colourful match-three game from the Compass Devs catalogue.</p><b>Explore project →</b></div>
 </article><article class="product-card gold" data-product="roadroller" tabindex="0">
 <div class="card-visual"><div class="icon-wrap"><div class="fallback">3D</div></div></div>
 <div class="card-copy"><small>3D action • Prototype</small><h3>Road Roller</h3><p>A working mobile 3D prototype driven by device motion sensors.</p><b>Explore project →</b></div>
 </article><article class="product-card orange" data-product="jumpzy" tabindex="0">
-<div class="card-visual"><div class="icon-wrap"><img alt="Jumpzy icon" src="assets/images/embedded-04.png"/></div></div>
+<div class="card-visual"><div class="icon-wrap"><img alt="Jumpzy icon" src="assets/images/jumpzy-icon.png"/></div></div>
 <div class="card-copy"><small>Arcade • Prototype</small><h3>Jumpzy</h3><p>A vertical action prototype with completed mechanics and sample levels.</p><b>Explore project →</b></div>
 </article><article class="product-card teal" data-product="tidelive" tabindex="0">
-<div class="card-visual"><div class="icon-wrap"><img alt="TideLive World icon" src="assets/images/embedded-05.png"/></div></div>
+<div class="card-visual"><div class="icon-wrap"><img alt="TideLive World icon" src="assets/images/tidelive-world-icon.png"/></div></div>
 <div class="card-copy"><small>Marine • Project tool</small><h3>TideLive World</h3><p>Live tide-gauge information and tidal predictions delivered from a backend to mobile devices.</p><b>Explore project →</b></div>
 </article><article class="product-card cyan" data-product="omnitides" tabindex="0">
-<div class="card-visual"><div class="icon-wrap"><img alt="OmniTides icon" src="assets/images/embedded-06.png"/></div></div>
+<div class="card-visual"><div class="icon-wrap"><img alt="OmniTides icon" src="assets/images/omnitides-icon.png"/></div></div>
 <div class="card-copy"><small>Marine • Forecast</small><h3>OmniTides</h3><p>Worldwide predicted tides with station discovery, map selection and tide information.</p><b>Explore project →</b></div>
 </article><article class="product-card indigo" data-product="omnitidespro" tabindex="0">
-<div class="card-visual"><div class="icon-wrap"><img alt="OmniTides Pro icon" src="assets/images/embedded-07.png"/></div></div>
+<div class="card-visual"><div class="icon-wrap"><img alt="OmniTides Pro icon" src="assets/images/omnitides-pro-icon.png"/></div></div>
 <div class="card-copy"><small>Marine • Pro</small><h3>OmniTides Pro</h3><p>The expanded professional edition of OmniTides, with broader tide-station coverage and additional functionality.</p><b>Explore project →</b></div>
 </article><article class="product-card green" data-product="chatzap" tabindex="0">
-<div class="card-visual"><div class="icon-wrap"><img alt="ChatZap icon" src="assets/images/embedded-08.png"/></div></div>
+<div class="card-visual"><div class="icon-wrap"><img alt="ChatZap icon" src="assets/images/chatzap-icon.png"/></div></div>
 <div class="card-copy"><small>AI • Previous release</small><h3>ChatZap</h3><p>An AI chat project exploring conversational assistance, questions, image generation, languages and history.</p><b>Explore project →</b></div>
 </article>
 <article aria-label="Open Cute Birds" class="product-card sky" data-product="cutebirds" role="button" tabindex="0">
 <div class="card-visual">
-<div class="icon-wrap"><img alt="Cute Birds icon" src="assets/images/embedded-03.png"/></div>
+<div class="icon-wrap"><img alt="Cute Birds icon" src="assets/images/cute-birds-icon.png"/></div>
 </div>
 <div class="card-copy"><small>Game • Previous release</small><h3>Cute Birds</h3>
 <p>A colorful bird-matching adventure combining Match-3 puzzles with themed stages and world progression.</p>
@@ -162,20 +202,20 @@ footer{background:#06172f;color:#b9c8d9;padding:40px 28px;text-align:center}
 <p>That release became the spark for more experiments: from 3D prototypes such as Road Roller and Jumpzy, to Cute Birds and practical marine tools born from engineering work. Over time the catalogue also expanded into other ideas, including tide utilities and AI-powered tools.</p>
 <p>Today Compass Devs is an independent one-person studio, developed alongside a full-time engineering career and family life. Some projects are current, others belong to earlier generations of the portfolio, but together they document a continuing process of learning, experimenting and building.</p>
 <p>The common thread has stayed the same: learn by building, solve a real need when one appears, and turn ideas worth exploring into working software. The technology and visual style continue to evolve, while the Compass Devs identity remains centered on exploration, practical creativity and independent development.</p>
-</div></div><img alt="Compass Devs developer" src="assets/images/embedded-09.jpg"/></div></section>
+</div></div><img alt="Compass Devs developer" src="assets/images/developer-photo.jpg"/></div></section>
 <section class="support-section" id="support">
 <div class="section">
 <div class="eyebrow">Support &amp; Legal</div>
 <h2>Everything in one place.</h2>
 <p class="lead">Support, privacy information and general enquiries for Compass Devs games and apps.</p>
 <div class="support-grid">
-<a class="support-card" href="mailto:support@compassdevs.com">
+<a class="support-card" href="mailto:compassdevs@gmail.com">
 <h3>Contact &amp; Support</h3><p>Get help with a Compass Devs product or send a general enquiry →</p>
 </a>
 <a class="support-card" href="#privacy">
 <h3>Privacy</h3><p>Compass Devs and product-specific privacy information →</p>
 </a>
-<a class="support-card" href="mailto:support@compassdevs.com?subject=Compass%20Devs%20Support">
+<a class="support-card" href="mailto:compassdevs@gmail.com?subject=Compass%20Devs%20Support">
 <h3>Product Help</h3><p>Tell us which game or app you need help with →</p>
 </a>
 </div>
@@ -184,7 +224,7 @@ footer{background:#06172f;color:#b9c8d9;padding:40px 28px;text-align:center}
 <section class="section" id="privacy">
 <div class="eyebrow">Privacy</div>
 <h2>Privacy information</h2>
-<p class="lead">Product-specific privacy policies can be linked here as each refreshed game or app is released. For privacy enquiries, contact <a href="mailto:support@compassdevs.com" style="color:#168cf3;font-weight:800">support@compassdevs.com</a>.</p>
+<p class="lead">Product-specific privacy policies can be linked here as each refreshed game or app is released. For privacy enquiries, contact <a href="mailto:compassdevs@gmail.com" style="color:#168cf3;font-weight:800">compassdevs@gmail.com</a>.</p>
 </section>
 <footer>© Compass Devs · Games &amp; Apps for a Brighter Everyday</footer></main>
 <section class="product-view" data-view="tilesquared" id="product-tilesquared">
@@ -210,13 +250,13 @@ footer{background:#06172f;color:#b9c8d9;padding:40px 28px;text-align:center}
 <div class="product-top sky">
 <button class="back-btn" type="button">← Back to Games &amp; Apps</button>
 <div class="product-head">
-<div class="product-icon"><img alt="Cute Birds icon" src="assets/images/embedded-03.png"/></div>
+<div class="product-icon"><img alt="Cute Birds icon" src="assets/images/cute-birds-icon.png"/></div>
 <div><small>Game • Previous release</small><h1>Cute Birds</h1>
 <p>A colorful Match-3 bird puzzle adventure with progressive stages, changing themes and a playful world map.</p></div>
 </div>
 </div>
 <div class="product-content">
-<img alt="Cute Birds feature artwork" class="feature-banner" src="assets/images/embedded-10.jpg"/>
+<img alt="Cute Birds feature artwork" class="feature-banner" src="assets/images/cute-birds-feature.jpg"/>
 <h2>About Cute Birds</h2>
 <p class="lead">Move through a sequence of themed stages, match the birds and continue across a playful world filled with changing environments and characters.</p>
 <div class="features">
@@ -224,7 +264,7 @@ footer{background:#06172f;color:#b9c8d9;padding:40px 28px;text-align:center}
 <span>Distinct bird characters</span><span>Colorful adventure presentation</span>
 </div>
 <h2>Screenshots</h2>
-<div class="gallery"><img alt="Cute Birds screenshot 1" src="assets/images/embedded-11.png"/><img alt="Cute Birds screenshot 2" src="assets/images/embedded-12.png"/><img alt="Cute Birds screenshot 3" src="assets/images/embedded-13.png"/><img alt="Cute Birds screenshot 4" src="assets/images/embedded-14.png"/><img alt="Cute Birds screenshot 5" src="assets/images/embedded-15.png"/><img alt="Cute Birds screenshot 6" src="assets/images/embedded-16.png"/></div>
+<div class="gallery"><img alt="Cute Birds screenshot 1" src="assets/images/cute-birds-screen-01.png"/><img alt="Cute Birds screenshot 2" src="assets/images/cute-birds-screen-02.png"/><img alt="Cute Birds screenshot 3" src="assets/images/cute-birds-screen-03.png"/><img alt="Cute Birds screenshot 4" src="assets/images/cute-birds-screen-04.png"/><img alt="Cute Birds screenshot 5" src="assets/images/cute-birds-screen-05.png"/><img alt="Cute Birds screenshot 6" src="assets/images/cute-birds-screen-06.png"/></div>
 <div class="store-downloads"><h2>Download</h2><p>Cute Birds is currently listed on Google Play.</p><div class="store-badges"><a class="store-badge" href="https://play.google.com/store/apps/details?id=com.compassdevs.shootthebirds" target="_blank" rel="noopener"><span class="mark">▶</span><span><small>Get it on</small><strong>Google Play</strong></span></a></div></div></div>
 </section><section class="product-view" data-view="roadroller" id="product-roadroller">
 <div class="product-top gold">
@@ -238,60 +278,60 @@ footer{background:#06172f;color:#b9c8d9;padding:40px 28px;text-align:center}
 </section><section class="product-view" data-view="jumpzy" id="product-jumpzy">
 <div class="product-top orange">
 <button class="back-btn" type="button">← Back to Games &amp; Apps</button>
-<div class="product-head"><div class="product-icon"><img alt="Jumpzy icon" src="assets/images/embedded-04.png"/></div><div><small>Arcade • Prototype</small><h1>Jumpzy</h1><p>A vertical action prototype with completed mechanics and sample levels.</p></div></div>
+<div class="product-head"><div class="product-icon"><img alt="Jumpzy icon" src="assets/images/jumpzy-icon.png"/></div><div><small>Arcade • Prototype</small><h1>Jumpzy</h1><p>A vertical action prototype with completed mechanics and sample levels.</p></div></div>
 </div>
 <div class="product-content">
 <h2>About Jumpzy</h2><p class="lead">Jumpzy is a colorful vertical action prototype built around launching a character upward through a playful world. The project reached a working state with completed mechanics and sample levels, making it one of the more developed experimental games in the Compass Devs catalogue.</p><p>Its bright artwork and character-driven presentation capture a period when Compass Devs was experimenting with different mobile game styles beyond puzzle games.</p>
-<img alt="Jumpzy artwork" class="feature-art" src="assets/images/embedded-17.png"/>
+<img alt="Jumpzy artwork" class="feature-art" src="assets/images/jumpzy-feature.png"/>
 <div class="coming">Additional original artwork and screenshots will be added here as the project archive is expanded.</div>
 </div>
 </section><section class="product-view" data-view="tidelive" id="product-tidelive">
 <div class="product-top teal">
 <button class="back-btn" type="button">← Back to Games &amp; Apps</button>
-<div class="product-head"><div class="product-icon"><img alt="TideLive World icon" src="assets/images/embedded-05.png"/></div><div><small>Marine • Project tool</small><h1>TideLive World</h1><p>Live tide-gauge information and tidal predictions delivered from a backend to mobile devices.</p></div></div>
+<div class="product-head"><div class="product-icon"><img alt="TideLive World icon" src="assets/images/tidelive-world-icon.png"/></div><div><small>Marine • Project tool</small><h1>TideLive World</h1><p>Live tide-gauge information and tidal predictions delivered from a backend to mobile devices.</p></div></div>
 </div>
 <div class="product-content">
 <h2>About TideLive</h2><p class="lead">TideLive grew from practical marine and engineering needs. The system was designed around a backend that manages tide-gauge information and a mobile frontend that makes live and predicted tidal information easier to view in the field.</p><p>The tutorials on this page show both sides of that workflow: the frontend used to access tide information and the backend used to manage the data behind it.</p>
-<img alt="TideLive World artwork" class="feature-art" src="assets/images/embedded-18.png"/>
-<h2>Screenshots</h2><div class="gallery"><img alt="TideLive World screenshot" loading="lazy" src="assets/images/embedded-19.png"/><img alt="TideLive World screenshot" loading="lazy" src="assets/images/embedded-20.png"/><img alt="TideLive World screenshot" loading="lazy" src="assets/images/embedded-21.png"/><img alt="TideLive World screenshot" loading="lazy" src="assets/images/embedded-22.png"/><img alt="TideLive World screenshot" loading="lazy" src="assets/images/embedded-23.png"/><img alt="TideLive World screenshot" loading="lazy" src="assets/images/embedded-24.png"/></div>
+<img alt="TideLive World artwork" class="feature-art" src="assets/images/tidelive-world-feature.png"/>
+<h2>Screenshots</h2><div class="gallery"><img alt="TideLive World screenshot" loading="lazy" src="assets/images/tidelive-world-screen-01.png"/><img alt="TideLive World screenshot" loading="lazy" src="assets/images/tidelive-world-screen-02.png"/><img alt="TideLive World screenshot" loading="lazy" src="assets/images/tidelive-world-screen-03.png"/><img alt="TideLive World screenshot" loading="lazy" src="assets/images/tidelive-world-screen-04.png"/><img alt="TideLive World screenshot" loading="lazy" src="assets/images/tidelive-world-screen-05.png"/><img alt="TideLive World screenshot" loading="lazy" src="assets/images/tidelive-world-screen-06.png"/></div>
 <h2>Videos</h2><div class="videos"><div class="video"><h3>TideLive Frontend Tutorial</h3><iframe allowfullscreen="" loading="lazy" src="https://www.youtube.com/embed/_btpdyD-QpI" title="TideLive Frontend Tutorial"></iframe></div><div class="video"><h3>TideLive Backend Tutorial</h3><iframe allowfullscreen="" loading="lazy" src="https://www.youtube.com/embed/M4jfGMnMexg" title="TideLive Backend Tutorial"></iframe></div></div>
 </div>
 </section><section class="product-view" data-view="omnitides" id="product-omnitides">
 <div class="product-top cyan">
 <button class="back-btn" type="button">← Back to Games &amp; Apps</button>
-<div class="product-head"><div class="product-icon"><img alt="OmniTides icon" src="assets/images/embedded-06.png"/></div><div><small>Marine • Forecast</small><h1>OmniTides</h1><p>Worldwide predicted tides with fast station discovery and practical tide information.</p></div></div>
+<div class="product-head"><div class="product-icon"><img alt="OmniTides icon" src="assets/images/omnitides-icon.png"/></div><div><small>Marine • Forecast</small><h1>OmniTides</h1><p>Worldwide predicted tides with fast station discovery and practical tide information.</p></div></div>
 </div>
 <div class="product-content">
 <h2>About OmniTides</h2>
 <p class="lead">OmniTides brings worldwide predicted tide information into a mobile interface designed for quick station discovery and everyday use. The app lets users begin by adding a station, search nearby stations using GPS, or browse stations manually by continent and list.</p>
 <p>The project carries forward the marine-software side of Compass Devs: taking experience gained from practical engineering work and turning it into a more approachable mobile tool for finding and exploring tide stations around the world.</p>
-<img alt="OmniTides feature artwork" class="feature-art" src="assets/images/embedded-25.png"/>
+<img alt="OmniTides feature artwork" class="feature-art" src="assets/images/omnitides-feature.png"/>
 <h2>Screenshots</h2>
-<div class="gallery"><img alt="OmniTides screenshot 1" loading="lazy" src="assets/images/embedded-26.png"/><img alt="OmniTides screenshot 2" loading="lazy" src="assets/images/embedded-27.png"/><img alt="OmniTides screenshot 3" loading="lazy" src="assets/images/embedded-28.png"/></div>
+<div class="gallery"><img alt="OmniTides screenshot 1" loading="lazy" src="assets/images/omnitides-screen-01.png"/><img alt="OmniTides screenshot 2" loading="lazy" src="assets/images/omnitides-screen-02.png"/><img alt="OmniTides screenshot 3" loading="lazy" src="assets/images/omnitides-screen-03.png"/></div>
 <div class="store-downloads"><h2>Download</h2><p>OmniTides is currently listed on Google Play.</p><div class="store-badges"><a class="store-badge" href="https://play.google.com/store/apps/details?id=com.compassdevs.omnitides" target="_blank" rel="noopener"><span class="mark">▶</span><span><small>Get it on</small><strong>Google Play</strong></span></a></div></div>
 </div>
 </section><section class="product-view" data-view="omnitidespro" id="product-omnitidespro">
 <div class="product-top indigo">
 <button class="back-btn" type="button">← Back to Games &amp; Apps</button>
-<div class="product-head"><div class="product-icon"><img alt="OmniTides Pro icon" src="assets/images/embedded-07.png"/></div><div><small>Marine • Pro</small><h1>OmniTides Pro</h1><p>The expanded OmniTides experience with additional station-discovery tools and a broader tide, weather and lunar toolkit.</p></div></div>
+<div class="product-head"><div class="product-icon"><img alt="OmniTides Pro icon" src="assets/images/omnitides-pro-icon.png"/></div><div><small>Marine • Pro</small><h1>OmniTides Pro</h1><p>The expanded OmniTides experience with additional station-discovery tools and a broader tide, weather and lunar toolkit.</p></div></div>
 </div>
 <div class="product-content">
 <h2>About OmniTides Pro</h2>
 <p class="lead">OmniTides Pro expands the OmniTides concept for users who want more ways to discover tide stations and explore environmental information. Stations can be selected through GPS, nearby-station maps, lists or random discovery.</p>
 <p>The original project screens also document the wider toolset around the selected station, including weather conditions, lunar information, tide curves and application settings. The gallery below follows the order of the original material supplied for the project.</p>
-<img alt="OmniTides Pro feature artwork" class="feature-art" src="assets/images/embedded-29.png"/>
+<img alt="OmniTides Pro feature artwork" class="feature-art" src="assets/images/omnitides-pro-feature.png"/>
 <h2>Screenshots</h2>
-<div class="gallery"><img alt="OmniTides Pro screenshot 1" loading="lazy" src="assets/images/embedded-30.jpg"/><img alt="OmniTides Pro screenshot 2" loading="lazy" src="assets/images/embedded-31.jpg"/><img alt="OmniTides Pro screenshot 3" loading="lazy" src="assets/images/embedded-32.jpg"/><img alt="OmniTides Pro screenshot 4" loading="lazy" src="assets/images/embedded-33.jpg"/><img alt="OmniTides Pro screenshot 5" loading="lazy" src="assets/images/embedded-34.jpg"/><img alt="OmniTides Pro screenshot 6" loading="lazy" src="assets/images/embedded-35.jpg"/><img alt="OmniTides Pro screenshot 7" loading="lazy" src="assets/images/embedded-36.jpg"/><img alt="OmniTides Pro screenshot 8" loading="lazy" src="assets/images/embedded-37.jpg"/></div>
+<div class="gallery"><img alt="OmniTides Pro screenshot 1" loading="lazy" src="assets/images/omnitides-pro-screen-01.jpg"/><img alt="OmniTides Pro screenshot 2" loading="lazy" src="assets/images/omnitides-pro-screen-02.jpg"/><img alt="OmniTides Pro screenshot 3" loading="lazy" src="assets/images/omnitides-pro-screen-03.jpg"/><img alt="OmniTides Pro screenshot 4" loading="lazy" src="assets/images/omnitides-pro-screen-04.jpg"/><img alt="OmniTides Pro screenshot 5" loading="lazy" src="assets/images/omnitides-pro-screen-05.jpg"/><img alt="OmniTides Pro screenshot 6" loading="lazy" src="assets/images/omnitides-pro-screen-06.jpg"/><img alt="OmniTides Pro screenshot 7" loading="lazy" src="assets/images/omnitides-pro-screen-07.jpg"/><img alt="OmniTides Pro screenshot 8" loading="lazy" src="assets/images/omnitides-pro-screen-08.jpg"/></div>
 <div class="store-downloads"><h2>Download</h2><p>OmniTides Pro is currently listed on Google Play.</p><div class="store-badges"><a class="store-badge" href="https://play.google.com/store/apps/details?id=com.compassdevs.omnitidespro" target="_blank" rel="noopener"><span class="mark">▶</span><span><small>Get it on</small><strong>Google Play</strong></span></a></div></div>
 </div>
 </section><section class="product-view" data-view="chatzap" id="product-chatzap">
 <div class="product-top green">
 <button class="back-btn" type="button">← Back to Games &amp; Apps</button>
-<div class="product-head"><div class="product-icon"><img alt="ChatZap icon" src="assets/images/embedded-08.png"/></div><div><small>AI • Previous release</small><h1>ChatZap</h1><p>An AI chat project exploring conversational assistance, questions, image generation, languages and history.</p></div></div>
+<div class="product-head"><div class="product-icon"><img alt="ChatZap icon" src="assets/images/chatzap-icon.png"/></div><div><small>AI • Previous release</small><h1>ChatZap</h1><p>An AI chat project exploring conversational assistance, questions, image generation, languages and history.</p></div></div>
 </div>
 <div class="product-content">
 <h2>About ChatZap</h2><p class="lead">ChatZap was a Compass Devs exploration of conversational AI in a friendly mobile format. The app combined general chat with guided questions, learning-oriented prompts, image generation, conversation history and multilingual support.</p><p>Its design aimed to make different AI capabilities easy to discover from a single home screen, with light and dark themes and support for ten languages. The original promotional material below documents that release.</p>
-<h2>Screenshots</h2><div class="gallery"><img alt="ChatZap screenshot" loading="lazy" src="assets/images/embedded-38.png"/><img alt="ChatZap screenshot" loading="lazy" src="assets/images/embedded-39.png"/><img alt="ChatZap screenshot" loading="lazy" src="assets/images/embedded-40.png"/><img alt="ChatZap screenshot" loading="lazy" src="assets/images/embedded-41.png"/><img alt="ChatZap screenshot" loading="lazy" src="assets/images/embedded-42.png"/><img alt="ChatZap screenshot" loading="lazy" src="assets/images/embedded-43.png"/><img alt="ChatZap screenshot" loading="lazy" src="assets/images/embedded-44.png"/><img alt="ChatZap screenshot" loading="lazy" src="assets/images/embedded-45.png"/></div>
+<h2>Screenshots</h2><div class="gallery"><img alt="ChatZap screenshot" loading="lazy" src="assets/images/chatzap-screen-01.png"/><img alt="ChatZap screenshot" loading="lazy" src="assets/images/chatzap-screen-02.png"/><img alt="ChatZap screenshot" loading="lazy" src="assets/images/chatzap-screen-03.png"/><img alt="ChatZap screenshot" loading="lazy" src="assets/images/chatzap-screen-04.png"/><img alt="ChatZap screenshot" loading="lazy" src="assets/images/chatzap-screen-05.png"/><img alt="ChatZap screenshot" loading="lazy" src="assets/images/chatzap-screen-06.png"/><img alt="ChatZap screenshot" loading="lazy" src="assets/images/chatzap-screen-07.png"/><img alt="ChatZap screenshot" loading="lazy" src="assets/images/chatzap-screen-08.png"/></div>
 <h2>Videos</h2><div class="videos"><div class="video local"><h3>ChatZap Promo</h3><p style="padding:20px">ChatZap promo video is included in the full ZIP package.</p></div></div>
 </div>
 </section>

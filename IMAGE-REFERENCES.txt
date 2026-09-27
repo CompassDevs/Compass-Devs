@@ -1,0 +1,137 @@
+COMPASS DEVS WEBSITE — IMAGE / FILE REFERENCE LIST
+========================================================
+
+HOW TO REPLACE AN IMAGE
+-----------------------
+1. Go to the location shown below.
+2. Replace the existing file with your new image.
+3. Keep EXACTLY the same filename and extension.
+4. Commit and Push with GitHub Desktop.
+5. GitHub Pages will update automatically after deployment finishes.
+
+IMPORTANT
+---------
+The phone test problem was caused by opening HTML locally through Android content://.
+On GitHub Pages these files are served normally over HTTPS from assets/images/.
+
+CORE WEBSITE
+------------
+Website / header icon:
+  assets/images/compass_icon.png
+
+Browser favicon / Apple touch icon:
+  assets/images/compass_icon.png
+
+Desktop hero:
+  assets/images/hero_desktop.jpg
+
+Mobile hero:
+  assets/images/hero_mobile.jpg
+
+About / developer photo:
+  assets/images/developer-photo.jpg
+
+
+CUTE BIRDS
+----------
+App icon:
+  assets/images/cute-birds-icon.png
+Feature artwork:
+  assets/images/cute-birds-feature.jpg
+Screenshots:
+  assets/images/cute-birds-screen-01.png
+  assets/images/cute-birds-screen-02.png
+  assets/images/cute-birds-screen-03.png
+  assets/images/cute-birds-screen-04.png
+  assets/images/cute-birds-screen-05.png
+  assets/images/cute-birds-screen-06.png
+
+
+JUMPZY
+------
+App icon:
+  assets/images/jumpzy-icon.png
+Feature artwork:
+  assets/images/jumpzy-feature.png
+
+
+TIDELIVE WORLD
+--------------
+App icon:
+  assets/images/tidelive-world-icon.png
+Feature artwork:
+  assets/images/tidelive-world-feature.png
+Screenshots:
+  assets/images/tidelive-world-screen-01.png
+  assets/images/tidelive-world-screen-02.png
+  assets/images/tidelive-world-screen-03.png
+  assets/images/tidelive-world-screen-04.png
+  assets/images/tidelive-world-screen-05.png
+  assets/images/tidelive-world-screen-06.png
+
+
+OMNITIDES
+---------
+App icon:
+  assets/images/omnitides-icon.png
+Feature artwork:
+  assets/images/omnitides-feature.png
+Screenshots:
+  assets/images/omnitides-screen-01.png
+  assets/images/omnitides-screen-02.png
+  assets/images/omnitides-screen-03.png
+
+
+OMNITIDES PRO
+-------------
+App icon:
+  assets/images/omnitides-pro-icon.png
+Feature artwork:
+  assets/images/omnitides-pro-feature.png
+Screenshots:
+  assets/images/omnitides-pro-screen-01.jpg
+  assets/images/omnitides-pro-screen-02.jpg
+  assets/images/omnitides-pro-screen-03.jpg
+  assets/images/omnitides-pro-screen-04.jpg
+  assets/images/omnitides-pro-screen-05.jpg
+  assets/images/omnitides-pro-screen-06.jpg
+  assets/images/omnitides-pro-screen-07.jpg
+  assets/images/omnitides-pro-screen-08.jpg
+
+
+CHATZAP
+-------
+App icon:
+  assets/images/chatzap-icon.png
+Screenshots:
+  assets/images/chatzap-screen-01.png
+  assets/images/chatzap-screen-02.png
+  assets/images/chatzap-screen-03.png
+  assets/images/chatzap-screen-04.png
+  assets/images/chatzap-screen-05.png
+  assets/images/chatzap-screen-06.png
+  assets/images/chatzap-screen-07.png
+  assets/images/chatzap-screen-08.png
+
+
+CURRENT PLACEHOLDER CARDS
+-------------------------
+Tile Squared, Rombicapo 3.0 and Road Roller currently use styled HTML/CSS
+placeholder artwork because verified official icon files were not available
+in the latest source package. Their cards can be upgraded later when you
+add the official icon files.
+
+
+MAIN WEBSITE FILE
+-----------------
+  index.html
+
+Contact email used by the website:
+  compassdevs@gmail.com
+
+
+NOTE ABOUT CROPPING
+-------------------
+If the correct picture is present but is cropped, the image itself may not
+need replacing. The relevant CSS uses object-fit. "contain" shows the whole
+image; "cover" fills the box and can crop the edges.
