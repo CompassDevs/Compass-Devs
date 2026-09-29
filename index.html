@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><title>Compass Devs — V13</title><!-- Release V11 --><style>
+:root{--navy:#071c3d;--blue:#168cf3;--cyan:#12c6dc;--text:#15253c;--muted:#65758b;--line:#e5ebf2}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Arial,sans-serif;color:var(--text);background:#fff}a{text-decoration:none;color:inherit}
+nav{height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(18px,6vw,86px);border-bottom:1px solid var(--line);background:#fff;position:sticky;top:0;z-index:30}
+.brand{display:flex;align-items:center;gap:10px;font-weight:900;font-size:23px;color:var(--navy)}.brand img{width:46px;height:46px;object-fit:contain}.brand span span{color:#168cf3}
+.navlinks{display:flex;gap:30px;font-weight:650;font-size:14px}.navlinks a:hover{color:var(--blue)}
+.hero{background:#071a36}.hero img{display:block;width:100%;height:auto;max-height:650px;object-fit:cover;object-position:center}
+.section{max-width:1180px;margin:auto;padding:68px 28px}.eyebrow{color:var(--blue);font-weight:850;letter-spacing:.12em;text-transform:uppercase;font-size:12px}.section h2{font-size:clamp(32px,5vw,48px);margin:8px 0 12px;color:var(--navy)}.lead{max-width:760px;color:var(--muted);font-size:18px;line-height:1.7}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:34px}.product-card{border:1px solid var(--line);border-radius:22px;overflow:hidden;background:#fff;box-shadow:0 14px 40px #071b3912;cursor:pointer;transition:.2s}.product-card:hover{transform:translateY(-5px);box-shadow:0 22px 50px #071b3920}
+.card-visual{height:190px;background:linear-gradient(135deg,#123,#258);background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;position:relative}.card-visual:after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 70% 15%,#ffffff42,transparent 38%)}
+.icon-wrap{position:relative;z-index:2;width:112px;height:112px;border-radius:25px;background:#ffffffef;padding:7px;display:grid;place-items:center;box-shadow:0 16px 35px #001a3a55}.icon-wrap img{width:100%;height:100%;object-fit:cover;border-radius:19px}.fallback{font-weight:950;font-size:36px;color:#123}
+.card-copy{padding:20px 22px 23px}.card-copy small,.product-head small{font-weight:850;text-transform:uppercase;letter-spacing:.08em;color:#168cf3}.card-copy h3{font-size:25px;margin:7px 0}.card-copy p{color:var(--muted);line-height:1.55;min-height:72px}.card-copy b{color:var(--blue)}
+.purple .card-visual,.product-top.purple{background:linear-gradient(135deg,#4b1a9d,#d04bcf,#ff8a53)}.blue .card-visual,.product-top.blue{background:linear-gradient(135deg,#061a39,#0d5ea5,#19c8d9)}.sky .card-visual,.product-top.sky{background:linear-gradient(135deg,#36a9db,#75d8d0,#ffd15b)}.gold .card-visual,.product-top.gold{background:linear-gradient(135deg,#222b36,#626d77,#d5a33d)}.orange .card-visual,.product-top.orange{background:linear-gradient(135deg,#58258b,#df6c72,#ffb15f)}.teal .card-visual,.product-top.teal{background:linear-gradient(135deg,#003a61,#008da5,#1cd2c5)}.cyan .card-visual,.product-top.cyan{background:linear-gradient(135deg,#00568e,#15a6d5,#f2c653)}.indigo .card-visual,.product-top.indigo{background:linear-gradient(135deg,#122653,#64458f,#df8564)}.green .card-visual,.product-top.green{background:linear-gradient(135deg,#0a6c93,#13c9a3,#6bd16c)}
+.about{background:#f5f9fd}.about-inner{display:grid;grid-template-columns:1.2fr .8fr;gap:50px;align-items:center}.about img{width:100%;max-width:330px;border-radius:28px;box-shadow:0 18px 50px #071b3920}
+footer{background:#06172f;color:#b9c8d9;padding:40px 28px;text-align:center}
+.product-view{display:none;min-height:100vh}.product-view.active{display:block}.main.hidden{display:none}.product-top{color:white;padding:42px max(24px,calc((100vw - 1120px)/2)) 65px}.back-btn{appearance:none;border:1px solid #ffffff70;background:#ffffff14;color:#fff;border-radius:999px;padding:11px 18px;font-weight:800;cursor:pointer;margin-bottom:38px}.product-head{display:grid;grid-template-columns:140px 1fr;gap:28px;align-items:center}.product-icon{width:130px;height:130px;border-radius:30px;background:#fff;padding:8px;display:grid;place-items:center;box-shadow:0 18px 40px #00142f45}.product-icon img{width:100%;height:100%;object-fit:cover;border-radius:23px}.product-icon .fallback{font-size:44px}.product-head small{color:#bceeff}.product-head h1{font-size:clamp(42px,7vw,76px);line-height:.95;margin:7px 0 12px}.product-head p{max-width:760px;font-size:18px;line-height:1.65;color:#e9f4ff}
+.product-content{max-width:1120px;margin:auto;padding:50px 28px 80px}.product-content h2{font-size:30px;color:var(--navy);margin-top:44px}.feature-art{display:block;width:100%;max-height:520px;object-fit:contain;border-radius:22px;background:#f4f7fa;box-shadow:0 14px 40px #071b3914}.gallery{display:flex;gap:18px;overflow-x:auto;padding:8px 4px 20px;scroll-snap-type:x mandatory}.gallery img{height:520px;width:auto;max-width:82vw;object-fit:contain;border-radius:18px;box-shadow:0 12px 30px #071b3920;scroll-snap-align:start;background:#f6f8fb}.videos{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}.video{border:1px solid var(--line);border-radius:20px;padding:16px;background:#fff}.video h3{margin:2px 0 12px}.video iframe,.video video{width:100%;aspect-ratio:16/9;border:0;border-radius:14px;background:#000}.coming{padding:30px;border-radius:18px;background:#f5f8fb;color:var(--muted)}
+@media(max-width:850px){.grid{grid-template-columns:1fr 1fr}.navlinks{display:none}.about-inner{grid-template-columns:1fr}.videos{grid-template-columns:1fr}.hero img{min-height:300px;object-fit:cover;object-position:center}.product-head{grid-template-columns:1fr}.product-icon{width:105px;height:105px}}
+@media(max-width:580px){nav{height:64px}.brand{font-size:19px}.brand img{width:40px;height:40px}.hero img{height:340px;object-fit:cover;object-position:57% center}.grid{grid-template-columns:1fr}.section{padding:50px 18px}.card-copy p{min-height:0}.product-top{padding:28px 18px 48px}.product-content{padding:34px 16px 60px}.gallery img{height:430px}.product-head h1{font-size:44px}}
+
+/* V10 fixes */
+.hero{position:relative;overflow:hidden}
+.hero-actions{
+  position:absolute;left:clamp(22px,7vw,110px);bottom:clamp(22px,5vw,62px);
+  z-index:4;display:flex;gap:14px;flex-wrap:wrap
+}
+.hero-btn{
+  display:inline-flex;align-items:center;justify-content:center;min-height:48px;
+  padding:13px 22px;border-radius:999px;font-weight:850;font-size:15px;
+  border:2px solid #fff;box-shadow:0 8px 24px #00152e42;transition:.2s;
+  cursor:pointer
+}
+.hero-btn.primary{background:#fff;color:#071c3d}
+.hero-btn.secondary{background:#071c3dcc;color:#fff;backdrop-filter:blur(5px)}
+.hero-btn:hover,.hero-btn:focus{transform:translateY(-2px);outline:3px solid #12c6dc55;outline-offset:2px}
+.support-section{background:#071c3d;color:#fff}
+.support-section .section h2,.support-section .eyebrow{color:#fff}
+.support-section .lead{color:#c8d5e5}
+.support-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:30px}
+.support-card{display:block;background:#fff;color:#15253c;border-radius:20px;padding:24px;min-height:150px}
+.support-card h3{margin:0 0 8px;color:#071c3d}.support-card p{margin:0;color:#65758b;line-height:1.55}
+.about-copy p{color:#65758b;font-size:17px;line-height:1.75;max-width:760px}
+.about-copy .lead{color:#65758b;font-size:18px}
+.feature-banner{width:100%;border-radius:22px;display:block;margin:24px 0 30px;box-shadow:0 14px 36px #071b3920}
+@media(max-width:760px){
+  nav{height:64px;padding:0 14px}.brand{font-size:18px}.brand img{width:39px;height:39px}
+  .navlinks{gap:12px;font-size:12px}.navlinks a:nth-child(2){display:none}
+  .hero img{min-height:410px;object-fit:cover;object-position:center}
+  .hero-actions{position:static;left:auto;right:auto;bottom:auto;display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:14px 18px 18px;background:#071a36}
+  .hero-btn{padding:12px 10px;font-size:13px;min-width:0;width:100%;text-align:center}
+  .support-grid{grid-template-columns:1fr}
+}
+@media(max-width:430px){
+  .navlinks a:not(:last-child){display:none}
+  .hero-actions{grid-template-columns:1fr}
+}
+
+
+/* V13 */
+.hero{position:relative;height:clamp(390px,46vw,455px);overflow:hidden;background:#071a36}
+.hero>img{width:100%;height:100%;max-height:none;min-height:0;object-fit:cover;object-position:center top}
+.hero-actions{position:absolute;left:clamp(22px,7vw,110px);bottom:20px;z-index:5;display:flex;gap:14px;flex-wrap:wrap}
+@media(max-width:760px){
+ .hero{height:auto}
+ .hero>img{display:block;width:100%;height:auto;min-height:0;object-fit:contain;clip-path:inset(0 0 23% 0);margin-bottom:-23%}
+ .hero-actions{position:static;display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:14px 18px 18px;background:#071a36}
+}
+@media(max-width:430px){.hero-actions{grid-template-columns:1fr}}
+
+/* Consistent Games & Apps cards: gradient + centered icon only. */
+.product-card .card-visual{background-image:none!important;background-size:auto!important;background-position:center!important}
+.product-card.purple .card-visual{background:linear-gradient(135deg,#6b25b7,#f06f78)!important}
+.product-card.blue .card-visual{background:linear-gradient(135deg,#15325e,#36b9d3)!important}
+.product-card.sky .card-visual{background:linear-gradient(135deg,#31a9dd,#79d7d0)!important}
+.product-card.gold .card-visual{background:linear-gradient(135deg,#263241,#d0a84a)!important}
+.product-card.orange .card-visual{background:linear-gradient(135deg,#7730a6,#ff9a55)!important}
+.product-card.teal .card-visual{background:linear-gradient(135deg,#087f94,#65d7c6)!important}
+.product-card.cyan .card-visual{background:linear-gradient(135deg,#0879b7,#54d5dc)!important}
+.product-card.indigo .card-visual{background:linear-gradient(135deg,#172c66,#8062b5)!important}
+.product-card.green .card-visual{background:linear-gradient(135deg,#19a76d,#38d0b3)!important}
+.product-card .card-visual .icon-wrap{
+ width:112px;height:112px;border-radius:25px;display:flex;align-items:center;justify-content:center;
+ background:#fffffff2;padding:7px;box-shadow:0 16px 34px #071b3940;position:relative;z-index:2
+}
+.product-card .card-visual .icon-wrap img{width:100%;height:100%;object-fit:contain;border-radius:19px}
+
+/* V13 corrections */
+.hero{position:relative;overflow:hidden;background:#071a36}
+.hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:145px;background:linear-gradient(180deg,rgba(7,26,54,0),#071a36 42%,#071a36);z-index:2;pointer-events:none}
+.hero-actions{z-index:4!important}
+.store-downloads{margin-top:42px;padding-top:28px;border-top:1px solid #dfe7f1}
+.store-downloads h2{margin-bottom:8px}
+.store-downloads p{color:#687a91;margin-top:0}
+.store-badges{display:flex;flex-wrap:wrap;gap:14px;margin-top:18px}
+.store-badge{display:inline-flex;align-items:center;gap:12px;background:#0b0b0c;color:#fff!important;border-radius:12px;padding:10px 18px;min-width:190px;box-shadow:0 8px 24px #00152b1c;transition:transform .18s ease}
+.store-badge:hover{transform:translateY(-2px)}
+.store-badge .mark{font-size:26px;line-height:1}
+.store-badge small{display:block;font-size:10px;letter-spacing:.08em;text-transform:uppercase;opacity:.8}
+.store-badge strong{display:block;font-size:18px;line-height:1.1}
+@media(max-width:760px){
+ .hero::after{display:none}
+ .hero-actions{position:static!important;background:#071a36!important}
+ .store-badges{flex-direction:column}
+ .store-badge{width:100%;justify-content:center}
+}
+
+/* V14 header + hero correction */
+.brand img{width:48px;height:48px;object-fit:cover;object-position:center;border-radius:50%;background:#061426}
+.hero{height:clamp(390px,52vw,640px);background:#071a36;overflow:hidden}
+.hero>img{width:100%;height:100%;max-height:none;object-fit:cover;object-position:center center}
+@media(max-width:580px){.brand img{width:42px;height:42px}.hero{height:390px}.hero>img{height:100%;object-position:center center}}
+</style>
+<style id="clean-master-fixes">
+.brand img{
+  width:48px!important;height:48px!important;object-fit:cover!important;
+  border-radius:13px!important;background:#050b13!important;
+}
+.approved-hero{
+  position:relative!important;
+  height:auto!important;
+  min-height:0!important;
+  overflow:hidden!important;
+  background:#071a36!important;
+}
+.approved-hero picture,.approved-hero picture img{
+  display:block!important;width:100%!important;height:auto!important;max-height:none!important;
+}
+.approved-hero::before,.approved-hero::after{display:none!important}
+.hero-hotspot{position:absolute;z-index:5;display:block}
+.hero-hotspot-apps{left:5.4%;top:69.4%;width:19.8%;height:11.5%}
+.hero-hotspot-about{left:26.5%;top:69.4%;width:18.3%;height:11.5%}
+@media(max-width:760px){
+  .brand img{width:42px!important;height:42px!important;border-radius:12px!important}
+  .approved-hero picture img{width:100%!important;height:auto!important;object-fit:contain!important}
+  .hero-hotspot-apps{left:5.0%;top:56.8%;width:58%;height:10.2%}
+  .hero-hotspot-about{left:5.0%;top:69.0%;width:54%;height:10.2%}
+}
+</style>
+
+<link rel="icon" type="image/png" href="assets/images/compass_icon.png">
+<link rel="apple-touch-icon" href="assets/images/compass_icon.png">
+
+<style id="github-ready-image-safety">
+img{max-width:100%;height:auto}
+.product-card img,.product-hero img{object-fit:contain}
+.gallery img,.screenshot-grid img{object-fit:contain}
+</style>
+
+</head><body data-version="14">
+<nav><a class="brand home-link" href="#home"><img alt="Compass Devs" src="assets/images/compass_icon.png"/><span>Compass <span>Devs</span></span></a><div class="navlinks"><a href="#home">Home</a><a href="#portfolio">Games &amp; Apps</a><a href="#about">About</a><a href="#support">Support</a></div></nav>
+<main class="main" id="main">
+<section class="hero approved-hero" id="home" aria-label="Compass Devs — Games & Apps for a Brighter Everyday">
+<picture>
+  <source media="(max-width:760px)" srcset="assets/images/hero_mobile.jpg">
+  <img src="assets/images/hero_desktop.jpg" alt="Compass Devs — Games & Apps for a Brighter Everyday">
+</picture>
+<a class="hero-hotspot hero-hotspot-apps" href="#portfolio" aria-label="Explore Games and Apps"></a>
+<a class="hero-hotspot hero-hotspot-about" href="#about" aria-label="About Compass Devs"></a>
+</section>
+<section class="section" id="portfolio"><div class="eyebrow">Explore • Play • Discover</div><h2>Our Games &amp; Apps</h2><p class="lead">Released products, current rebuilds and selected prototypes from the Compass Devs journey. Each project now uses its real artwork wherever original assets are available.</p><div class="grid"><article class="product-card purple" data-product="tilesquared" tabindex="0">
+<div class="card-visual"><div class="icon-wrap"><div class="fallback">T²</div></div></div>
+<div class="card-copy"><small>Puzzle • New identity</small><h3>Tile Squared</h3><p>The next evolution of the 2048-inspired project previously released as Mergeify.</p><b>Explore project →</b></div>
+</article><article class="product-card blue" data-product="rombicapo" tabindex="0">
+<div class="card-visual"><div class="icon-wrap"><div class="fallback">R3</div></div></div>
+<div class="card-copy"><small>Puzzle • Major update</small><h3>Rombicapo 3.0</h3><p>The game that started the Compass Devs journey, rebuilt with a modern visual direction and new features.</p><b>Explore project →</b></div>
+</article><article class="product-card sky" data-product="cutebirds" tabindex="0">
+<div class="card-visual"><div class="icon-wrap"><img alt="Cute Birds icon" src="assets/images/cute-birds-icon.png"/></div></div>
+<div class="card-copy"><small>Match 3 • Released</small><h3>Cute Birds</h3><p>A colourful match-three game from the Compass Devs catalogue.</p><b>Explore project →</b></div>
+</article><article class="product-card gold" data-product="roadroller" tabindex="0">
+<div class="card-visual"><div class="icon-wrap"><div class="fallback">3D</div></div></div>
+<div class="card-copy"><small>3D action • Prototype</small><h3>Road Roller</h3><p>A working mobile 3D prototype driven by device motion sensors.</p><b>Explore project →</b></div>
+</article><article class="product-card orange" data-product="jumpzy" tabindex="0">
+<div class="card-visual"><div class="icon-wrap"><img alt="Jumpzy icon" src="assets/images/jumpzy-icon.png"/></div></div>
+<div class="card-copy"><small>Arcade • Prototype</small><h3>Jumpzy</h3><p>A vertical action prototype with completed mechanics and sample levels.</p><b>Explore project →</b></div>
+</article><article class="product-card teal" data-product="tidelive" tabindex="0">
+<div class="card-visual"><div class="icon-wrap"><img alt="TideLive World icon" src="assets/images/tidelive-world-icon.png"/></div></div>
+<div class="card-copy"><small>Marine • Project tool</small><h3>TideLive World</h3><p>Live tide-gauge information and tidal predictions delivered from a backend to mobile devices.</p><b>Explore project →</b></div>
+</article><article class="product-card cyan" data-product="omnitides" tabindex="0">
+<div class="card-visual"><div class="icon-wrap"><img alt="OmniTides icon" src="assets/images/omnitides-icon.png"/></div></div>
+<div class="card-copy"><small>Marine • Forecast</small><h3>OmniTides</h3><p>Worldwide predicted tides with station discovery, map selection and tide information.</p><b>Explore project →</b></div>
+</article><article class="product-card indigo" data-product="omnitidespro" tabindex="0">
+<div class="card-visual"><div class="icon-wrap"><img alt="OmniTides Pro icon" src="assets/images/omnitides-pro-icon.png"/></div></div>
+<div class="card-copy"><small>Marine • Pro</small><h3>OmniTides Pro</h3><p>The expanded professional edition of OmniTides, with broader tide-station coverage and additional functionality.</p><b>Explore project →</b></div>
+</article><article class="product-card green" data-product="chatzap" tabindex="0">
+<div class="card-visual"><div class="icon-wrap"><img alt="ChatZap icon" src="assets/images/chatzap-icon.png"/></div></div>
+<div class="card-copy"><small>AI • Previous release</small><h3>ChatZap</h3><p>An AI chat project exploring conversational assistance, questions, image generation, languages and history.</p><b>Explore project →</b></div>
+</article>
+<article aria-label="Open Cute Birds" class="product-card sky" data-product="cutebirds" role="button" tabindex="0">
+<div class="card-visual">
+<div class="icon-wrap"><img alt="Cute Birds icon" src="assets/images/cute-birds-icon.png"/></div>
+</div>
+<div class="card-copy"><small>Game • Previous release</small><h3>Cute Birds</h3>
+<p>A colorful bird-matching adventure combining Match-3 puzzles with themed stages and world progression.</p>
+<b>Explore project →</b>
+</div>
+</article>
+</div></section>
+<section class="about" id="about"><div class="section about-inner"><div><div class="eyebrow">About Compass Devs</div><h2>Independent. Curious. Always Building.</h2><div class="about-copy">
+<p class="lead">Compass Devs is an independent development studio creating games and apps for curious minds. From relaxing puzzles to practical tools, the goal is simple: build digital experiences that add a little more adventure, knowledge and enjoyment to everyday life.</p>
+<p>Compass Devs began as a three-person idea around the first version of Rombicapo. The original iOS game reached working phones but never reached the App Store. Years later, the project was revived independently, rebuilt with Godot and eventually brought to both Android and iOS.</p>
+<p>That release became the spark for more experiments: from 3D prototypes such as Road Roller and Jumpzy, to Cute Birds and practical marine tools born from engineering work. Over time the catalogue also expanded into other ideas, including tide utilities and AI-powered tools.</p>
+<p>Today Compass Devs is an independent one-person studio, developed alongside a full-time engineering career and family life. Some projects are current, others belong to earlier generations of the portfolio, but together they document a continuing process of learning, experimenting and building.</p>
+<p>The common thread has stayed the same: learn by building, solve a real need when one appears, and turn ideas worth exploring into working software. The technology and visual style continue to evolve, while the Compass Devs identity remains centered on exploration, practical creativity and independent development.</p>
+</div></div><img alt="Compass Devs developer" src="assets/images/developer-photo.jpg"/></div></section>
+<section class="support-section" id="support">
+<div class="section">
+<div class="eyebrow">Support &amp; Legal</div>
+<h2>Everything in one place.</h2>
+<p class="lead">Support, privacy information and general enquiries for Compass Devs games and apps.</p>
+<div class="support-grid">
+<a class="support-card" href="mailto:compassdevs@gmail.com">
+<h3>Contact &amp; Support</h3><p>Get help with a Compass Devs product or send a general enquiry →</p>
+</a>
+<a class="support-card" href="legal/privacy.html">
+<h3>Privacy</h3><p>Compass Devs and product-specific privacy information →</p>
+</a>
+<a class="support-card" href="mailto:compassdevs@gmail.com?subject=Compass%20Devs%20Support">
+<h3>Product Help</h3><p>Tell us which game or app you need help with →</p>
+</a>
+</div>
+</div>
+</section>
+<section class="section" id="privacy">
+<div class="eyebrow">Privacy</div>
+<h2>Privacy information</h2>
+<p class="lead">Product-specific privacy policies can be linked here as each refreshed game or app is released. For privacy enquiries, contact <a href="mailto:compassdevs@gmail.com" style="color:#168cf3;font-weight:800">compassdevs@gmail.com</a>.</p>
+</section>
+<footer>© Compass Devs · Games &amp; Apps for a Brighter Everyday</footer></main>
+<section class="product-view" data-view="tilesquared" id="product-tilesquared">
+<div class="product-top purple">
+<button class="back-btn" type="button">← Back to Games &amp; Apps</button>
+<div class="product-head"><div class="product-icon"><div class="fallback">T²</div></div><div><small>Puzzle • New identity</small><h1>Tile Squared</h1><p>The next evolution of the 2048-inspired project previously released as Mergeify.</p></div></div>
+</div>
+<div class="product-content">
+<h2>About Tile Squared</h2><p class="lead">Tile Squared continues the ideas explored in the earlier Mergeify project, taking the familiar number-merging puzzle format in a refreshed direction. It is being developed as a cleaner, more distinctive Compass Devs puzzle experience, with its own identity and room to evolve through new themes and presentation.</p><p>More artwork and final gameplay details will be added here as the new release takes shape.</p>
+<div class="coming">Additional original artwork and screenshots will be added here as the project archive is expanded.</div>
+</div>
+</section><section class="product-view" data-view="rombicapo" id="product-rombicapo">
+<div class="product-top blue">
+<button class="back-btn" type="button">← Back to Games &amp; Apps</button>
+<div class="product-head"><div class="product-icon"><div class="fallback">R3</div></div><div><small>Puzzle • Major update</small><h1>Rombicapo 3.0</h1><p>The game that started the Compass Devs journey, rebuilt with a modern visual direction and new features.</p></div></div>
+</div>
+<div class="product-content">
+<h2>About Rombicapo</h2><p class="lead">Rombicapo is the project at the beginning of the Compass Devs story. The first version started as a three-person iOS game and reached working phones, although it was never published on the App Store. Years later the idea was revived independently, rebuilt with Godot and brought to Android and iOS.</p><p>Rombicapo 3.0 represents the next major step: a modern rebuild that keeps the puzzle-game roots while updating the presentation, technology and overall experience. The videos below preserve a look at Rombicapo 2.0 and its earlier gameplay.</p>
+<div class="coming">Additional original artwork and screenshots will be added here as the project archive is expanded.</div>
+<h2>Videos</h2><div class="videos"><div class="video"><h3>Rombicapo 2.0 Promo</h3><iframe allowfullscreen="" loading="lazy" src="https://www.youtube.com/embed/6pn0pOi6wvk" title="Rombicapo 2.0 Promo"></iframe></div><div class="video"><h3>Rombicapo 2.0 Gameplay</h3><iframe allowfullscreen="" loading="lazy" src="https://www.youtube.com/embed/8LxzAgEfLqY" title="Rombicapo 2.0 Gameplay"></iframe></div></div>
+</div>
+</section><section class="product-view" data-view="cutebirds" id="product-cutebirds">
+<div class="product-top sky">
+<button class="back-btn" type="button">← Back to Games &amp; Apps</button>
+<div class="product-head">
+<div class="product-icon"><img alt="Cute Birds icon" src="assets/images/cute-birds-icon.png"/></div>
+<div><small>Game • Previous release</small><h1>Cute Birds</h1>
+<p>A colorful Match-3 bird puzzle adventure with progressive stages, changing themes and a playful world map.</p></div>
+</div>
+</div>
+<div class="product-content">
+<img alt="Cute Birds feature artwork" class="feature-banner" src="assets/images/cute-birds-feature.jpg"/>
+<h2>About Cute Birds</h2>
+<p class="lead">Move through a sequence of themed stages, match the birds and continue across a playful world filled with changing environments and characters.</p>
+<div class="features">
+<span>Match-3 bird puzzles</span><span>Progressive level maps</span><span>Multiple stage themes</span>
+<span>Distinct bird characters</span><span>Colorful adventure presentation</span>
+</div>
+<h2>Screenshots</h2>
+<div class="gallery"><img alt="Cute Birds screenshot 1" src="assets/images/cute-birds-screen-01.png"/><img alt="Cute Birds screenshot 2" src="assets/images/cute-birds-screen-02.png"/><img alt="Cute Birds screenshot 3" src="assets/images/cute-birds-screen-03.png"/><img alt="Cute Birds screenshot 4" src="assets/images/cute-birds-screen-04.png"/><img alt="Cute Birds screenshot 5" src="assets/images/cute-birds-screen-05.png"/><img alt="Cute Birds screenshot 6" src="assets/images/cute-birds-screen-06.png"/></div>
+<div class="store-downloads"><h2>Download</h2><p>Cute Birds is currently listed on Google Play.</p><div class="store-badges"><a class="store-badge" href="https://play.google.com/store/apps/details?id=com.compassdevs.shootthebirds" target="_blank" rel="noopener"><span class="mark">▶</span><span><small>Get it on</small><strong>Google Play</strong></span></a></div></div></div>
+</section><section class="product-view" data-view="roadroller" id="product-roadroller">
+<div class="product-top gold">
+<button class="back-btn" type="button">← Back to Games &amp; Apps</button>
+<div class="product-head"><div class="product-icon"><div class="fallback">3D</div></div><div><small>3D action • Prototype</small><h1>Road Roller</h1><p>A working mobile 3D prototype driven by device motion sensors.</p></div></div>
+</div>
+<div class="product-content">
+<h2>About Road Roller</h2><p class="lead">Road Roller is one of the experimental 3D projects created during the Compass Devs journey. It became a working mobile prototype built around direct, motion-driven interaction and the challenge of translating device movement into a simple playable experience.</p><p>The project remains part of the studio archive as an example of learning through experimentation. Additional original material can be added here if it is recovered.</p>
+<div class="coming">Additional original artwork and screenshots will be added here as the project archive is expanded.</div>
+</div>
+</section><section class="product-view" data-view="jumpzy" id="product-jumpzy">
+<div class="product-top orange">
+<button class="back-btn" type="button">← Back to Games &amp; Apps</button>
+<div class="product-head"><div class="product-icon"><img alt="Jumpzy icon" src="assets/images/jumpzy-icon.png"/></div><div><small>Arcade • Prototype</small><h1>Jumpzy</h1><p>A vertical action prototype with completed mechanics and sample levels.</p></div></div>
+</div>
+<div class="product-content">
+<h2>About Jumpzy</h2><p class="lead">Jumpzy is a colorful vertical action prototype built around launching a character upward through a playful world. The project reached a working state with completed mechanics and sample levels, making it one of the more developed experimental games in the Compass Devs catalogue.</p><p>Its bright artwork and character-driven presentation capture a period when Compass Devs was experimenting with different mobile game styles beyond puzzle games.</p>
+<img alt="Jumpzy artwork" class="feature-art" src="assets/images/jumpzy-feature.png"/>
+<div class="coming">Additional original artwork and screenshots will be added here as the project archive is expanded.</div>
+</div>
+</section><section class="product-view" data-view="tidelive" id="product-tidelive">
+<div class="product-top teal">
+<button class="back-btn" type="button">← Back to Games &amp; Apps</button>
+<div class="product-head"><div class="product-icon"><img alt="TideLive World icon" src="assets/images/tidelive-world-icon.png"/></div><div><small>Marine • Project tool</small><h1>TideLive World</h1><p>Live tide-gauge information and tidal predictions delivered from a backend to mobile devices.</p></div></div>
+</div>
+<div class="product-content">
+<h2>About TideLive</h2><p class="lead">TideLive grew from practical marine and engineering needs. The system was designed around a backend that manages tide-gauge information and a mobile frontend that makes live and predicted tidal information easier to view in the field.</p><p>The tutorials on this page show both sides of that workflow: the frontend used to access tide information and the backend used to manage the data behind it.</p>
+<img alt="TideLive World artwork" class="feature-art" src="assets/images/tidelive-world-feature.png"/>
+<h2>Screenshots</h2><div class="gallery"><img alt="TideLive World screenshot" loading="lazy" src="assets/images/tidelive-world-screen-01.png"/><img alt="TideLive World screenshot" loading="lazy" src="assets/images/tidelive-world-screen-02.png"/><img alt="TideLive World screenshot" loading="lazy" src="assets/images/tidelive-world-screen-03.png"/><img alt="TideLive World screenshot" loading="lazy" src="assets/images/tidelive-world-screen-04.png"/><img alt="TideLive World screenshot" loading="lazy" src="assets/images/tidelive-world-screen-05.png"/><img alt="TideLive World screenshot" loading="lazy" src="assets/images/tidelive-world-screen-06.png"/></div>
+<h2>Videos</h2><div class="videos"><div class="video"><h3>TideLive Frontend Tutorial</h3><iframe allowfullscreen="" loading="lazy" src="https://www.youtube.com/embed/_btpdyD-QpI" title="TideLive Frontend Tutorial"></iframe></div><div class="video"><h3>TideLive Backend Tutorial</h3><iframe allowfullscreen="" loading="lazy" src="https://www.youtube.com/embed/M4jfGMnMexg" title="TideLive Backend Tutorial"></iframe></div></div>
+</div>
+</section><section class="product-view" data-view="omnitides" id="product-omnitides">
+<div class="product-top cyan">
+<button class="back-btn" type="button">← Back to Games &amp; Apps</button>
+<div class="product-head"><div class="product-icon"><img alt="OmniTides icon" src="assets/images/omnitides-icon.png"/></div><div><small>Marine • Forecast</small><h1>OmniTides</h1><p>Worldwide predicted tides with fast station discovery and practical tide information.</p></div></div>
+</div>
+<div class="product-content">
+<h2>About OmniTides</h2>
+<p class="lead">OmniTides brings worldwide predicted tide information into a mobile interface designed for quick station discovery and everyday use. The app lets users begin by adding a station, search nearby stations using GPS, or browse stations manually by continent and list.</p>
+<p>The project carries forward the marine-software side of Compass Devs: taking experience gained from practical engineering work and turning it into a more approachable mobile tool for finding and exploring tide stations around the world.</p>
+<img alt="OmniTides feature artwork" class="feature-art" src="assets/images/omnitides-feature.png"/>
+<h2>Screenshots</h2>
+<div class="gallery"><img alt="OmniTides screenshot 1" loading="lazy" src="assets/images/omnitides-screen-01.png"/><img alt="OmniTides screenshot 2" loading="lazy" src="assets/images/omnitides-screen-02.png"/><img alt="OmniTides screenshot 3" loading="lazy" src="assets/images/omnitides-screen-03.png"/></div>
+<div class="store-downloads"><h2>Download</h2><p>OmniTides is currently listed on Google Play.</p><div class="store-badges"><a class="store-badge" href="https://play.google.com/store/apps/details?id=com.compassdevs.omnitides" target="_blank" rel="noopener"><span class="mark">▶</span><span><small>Get it on</small><strong>Google Play</strong></span></a></div></div>
+</div>
+</section><section class="product-view" data-view="omnitidespro" id="product-omnitidespro">
+<div class="product-top indigo">
+<button class="back-btn" type="button">← Back to Games &amp; Apps</button>
+<div class="product-head"><div class="product-icon"><img alt="OmniTides Pro icon" src="assets/images/omnitides-pro-icon.png"/></div><div><small>Marine • Pro</small><h1>OmniTides Pro</h1><p>The expanded OmniTides experience with additional station-discovery tools and a broader tide, weather and lunar toolkit.</p></div></div>
+</div>
+<div class="product-content">
+<h2>About OmniTides Pro</h2>
+<p class="lead">OmniTides Pro expands the OmniTides concept for users who want more ways to discover tide stations and explore environmental information. Stations can be selected through GPS, nearby-station maps, lists or random discovery.</p>
+<p>The original project screens also document the wider toolset around the selected station, including weather conditions, lunar information, tide curves and application settings. The gallery below follows the order of the original material supplied for the project.</p>
+<img alt="OmniTides Pro feature artwork" class="feature-art" src="assets/images/omnitides-pro-feature.png"/>
+<h2>Screenshots</h2>
+<div class="gallery"><img alt="OmniTides Pro screenshot 1" loading="lazy" src="assets/images/omnitides-pro-screen-01.jpg"/><img alt="OmniTides Pro screenshot 2" loading="lazy" src="assets/images/omnitides-pro-screen-02.jpg"/><img alt="OmniTides Pro screenshot 3" loading="lazy" src="assets/images/omnitides-pro-screen-03.jpg"/><img alt="OmniTides Pro screenshot 4" loading="lazy" src="assets/images/omnitides-pro-screen-04.jpg"/><img alt="OmniTides Pro screenshot 5" loading="lazy" src="assets/images/omnitides-pro-screen-05.jpg"/><img alt="OmniTides Pro screenshot 6" loading="lazy" src="assets/images/omnitides-pro-screen-06.jpg"/><img alt="OmniTides Pro screenshot 7" loading="lazy" src="assets/images/omnitides-pro-screen-07.jpg"/><img alt="OmniTides Pro screenshot 8" loading="lazy" src="assets/images/omnitides-pro-screen-08.jpg"/></div>
+<div class="store-downloads"><h2>Download</h2><p>OmniTides Pro is currently listed on Google Play.</p><div class="store-badges"><a class="store-badge" href="https://play.google.com/store/apps/details?id=com.compassdevs.omnitidespro" target="_blank" rel="noopener"><span class="mark">▶</span><span><small>Get it on</small><strong>Google Play</strong></span></a></div></div>
+</div>
+</section><section class="product-view" data-view="chatzap" id="product-chatzap">
+<div class="product-top green">
+<button class="back-btn" type="button">← Back to Games &amp; Apps</button>
+<div class="product-head"><div class="product-icon"><img alt="ChatZap icon" src="assets/images/chatzap-icon.png"/></div><div><small>AI • Previous release</small><h1>ChatZap</h1><p>An AI chat project exploring conversational assistance, questions, image generation, languages and history.</p></div></div>
+</div>
+<div class="product-content">
+<h2>About ChatZap</h2><p class="lead">ChatZap was a Compass Devs exploration of conversational AI in a friendly mobile format. The app combined general chat with guided questions, learning-oriented prompts, image generation, conversation history and multilingual support.</p><p>Its design aimed to make different AI capabilities easy to discover from a single home screen, with light and dark themes and support for ten languages. The original promotional material below documents that release.</p>
+<h2>Screenshots</h2><div class="gallery"><img alt="ChatZap screenshot" loading="lazy" src="assets/images/chatzap-screen-01.png"/><img alt="ChatZap screenshot" loading="lazy" src="assets/images/chatzap-screen-02.png"/><img alt="ChatZap screenshot" loading="lazy" src="assets/images/chatzap-screen-03.png"/><img alt="ChatZap screenshot" loading="lazy" src="assets/images/chatzap-screen-04.png"/><img alt="ChatZap screenshot" loading="lazy" src="assets/images/chatzap-screen-05.png"/><img alt="ChatZap screenshot" loading="lazy" src="assets/images/chatzap-screen-06.png"/><img alt="ChatZap screenshot" loading="lazy" src="assets/images/chatzap-screen-07.png"/><img alt="ChatZap screenshot" loading="lazy" src="assets/images/chatzap-screen-08.png"/></div>
+<h2>Videos</h2><div class="videos"><div class="video local"><h3>ChatZap Promo</h3><p style="padding:20px">ChatZap promo video is included in the full ZIP package.</p></div></div>
+</div>
+</section>
+<script>
+const main=document.getElementById('main');
+function openProduct(id){
+  document.querySelectorAll('.product-view').forEach(v=>v.classList.remove('active'));
+  const v=document.getElementById('product-'+id); if(!v)return;
+  main.classList.add('hidden'); v.classList.add('active');
+  history.replaceState(null,'','#product-'+id);
+  window.scrollTo({top:0,left:0,behavior:'instant'});
+}
+function closeProduct(){
+  document.querySelectorAll('.product-view').forEach(v=>v.classList.remove('active'));
+  main.classList.remove('hidden');
+  history.replaceState(null,'','#portfolio');
+  requestAnimationFrame(()=>document.getElementById('portfolio').scrollIntoView({block:'start'}));
+}
+document.querySelectorAll('.product-card').forEach(c=>{
+  c.addEventListener('click',()=>openProduct(c.dataset.product));
+  c.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openProduct(c.dataset.product)}});
+});
+document.querySelectorAll('.back-btn').forEach(b=>b.addEventListener('click',closeProduct));
+document.querySelectorAll('nav a[href^="#"],.home-link').forEach(a=>a.addEventListener('click',e=>{
+  if(main.classList.contains('hidden')){document.querySelectorAll('.product-view').forEach(v=>v.classList.remove('active'));main.classList.remove('hidden');}
+}));
+</script></body></html>
